@@ -1,4 +1,5 @@
-markdown:     rdiscount
+name:         Adam Albrecht
+markdown:     redcarpet
 permalink:    pretty
 pygments:     true
 paginate:     5
