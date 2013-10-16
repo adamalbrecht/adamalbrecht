@@ -1,12 +1,8 @@
 ---
 layout: post
-title: Hello, world!
+title: This is a title of a page!
 ---
 
-Welcome to [Hyde](http://andhyde.com), the perfect companion to [Jekyll](http://jekyllrb.com), the popular static site generator. Hyde is an elegant, open source, mobile first theme for Jekyll. It includes lightweight styles and placeholder content to get you up and running with a simple blog in no time.
+Vestibulum [sollicitudin mauris](something.com) eget est luctus tempor. Sed vestibulum ante eu libero elementum rhoncus. Duis erat ligula, rutrum eu iaculis sed, laoreet et est. Phasellus tempor, elit id faucibus adipiscing, nisi erat ultricies dui, quis pulvinar elit quam non turpis. Donec vehicula felis a urna suscipit consequat. Donec pretium erat ac orci laoreet porta. Vivamus ac ipsum tincidunt purus suscipit sodales. Vestibulum sodales, metus a vehicula mattis, orci velit elementum velit, eu malesuada magna lectus vel turpis.
 
-Hyde is also rather forward-thinking in that—in addition to Chrome, Safari, and Firefox—it is only compatible with Internet Explorer 9 and above.
-
-Find out more and [download a copy](https://github.com/mdo/hyde) today from GitHub.
-
-Thanks!
+Vestibulum sollicitudin mauris eget est luctus tempor. Sed vestibulum ante eu libero elementum rhoncus. Duis erat ligula, rutrum eu iaculis sed, laoreet et est. Phasellus tempor, elit id faucibus adipiscing, nisi erat ultricies dui, quis pulvinar elit quam non turpis. Donec vehicula felis a urna suscipit consequat. Donec pretium erat ac orci laoreet porta. Vivamus ac ipsum tincidunt purus suscipit sodales. Vestibulum sodales, metus a vehicula mattis, orci velit elementum velit, eu malesuada magna lectus vel turpis.

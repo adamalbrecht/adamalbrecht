@@ -51,7 +51,11 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
-  font-size: 40px;
+  font-size: 32px;
+}
+h1.title, h2.title {
+  font-size: 32px;
+  font-weight:500;
 }
 h2 {
   margin-top: 20px;
@@ -174,6 +178,10 @@ a {
   color: #222;
   text-decoration: none;
 }
+h1 a, h2 a {
+  font-weight:500;
+  color: inherit;
+}
 a:hover {
   text-decoration: underline;
 }
@@ -195,7 +203,7 @@ a:hover {
   font-family: "Abril Fatface";
 }
 .masthead .lead {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   margin-bottom: 0;
 }
@@ -205,7 +213,7 @@ a:hover {
 
 /* Footer area of masthead */
 .colophon {
-  margin-top: 20px;
+  margin-top: 10px;
   color: #7a7a7a;
 }
 .colophon-links {
@@ -268,6 +276,11 @@ a:hover {
   background-color: #f5f5f5;
 }
 
+/* Other Pages
+-------------------------------------------------- */
+.page {
+  padding: 20px 0;
+}
 
 /* Responsive
 -------------------------------------------------- */
@@ -276,19 +289,30 @@ a:hover {
   .masthead-inner {
     padding: 40px;
   }
+  .masthead h1 {
+    font-size: 54px;
+  }
+  .masthead .lead {
+    font-size:20px;
+  }
+  h1, h1.title, h2.title {
+    font-size: 36px;
+  }
   .posts {
     margin-left: 40px;
     margin-right: 40px;
   }
 }
-
 @media (min-width: 990px) {
 
   body {
     font-size: 18px;
   }
+  h1, h1.title, h2.title {
+    font-size: 40px;
+  }
   .masthead h1 {
-    font-size: 64px;
+    font-size: 58px;
   }
 
   /* Center container in available real estate */
@@ -314,7 +338,7 @@ a:hover {
     left: 0;
   }
   .masthead .lead {
-    font-size: 24px;
+    font-size: 22px;
   }
   .colophon {
     margin-top: 40px;
@@ -338,3 +362,13 @@ a:hover {
   }
 
 }
+
+@media (min-width: 1200px) {
+  .masthead h1 {
+    font-size: 64px;
+  }
+  .masthead .lead {
+    font-size: 24px;
+  }
+}
+
