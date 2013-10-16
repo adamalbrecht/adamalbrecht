@@ -230,9 +230,9 @@ a:hover {
 -------------------------------------------------- */
 
 /* Wrapper for all posts on homepage */
-.posts {
-  margin-left:  20px;
-  margin-right: 20px;
+.container {
+  padding-left:  20px;
+  padding-right: 20px;
 }
 
 /* Single post */
@@ -282,13 +282,30 @@ a:hover {
   padding: 20px 0;
 }
 
+/* BrowseHappy
+-------------------------------------------------- */
+.browsehappy {
+  z-index:100000;
+  background: #eee;
+  border: solid 1px #999;
+  position:fixed;
+  top:0;
+  left:0;
+  padding: 10px 0;
+  text-align: center;
+  display:block;
+  width:100%;
+  font-size: 20px;
+}
+.browsehappy a {
+  text-decoration: underline;
+  color: #3F7AB9;
+}
+
 /* Responsive
 -------------------------------------------------- */
 
 @media (min-width: 768px) {
-  .masthead-inner {
-    padding: 40px;
-  }
   .masthead h1 {
     font-size: 54px;
   }
@@ -298,13 +315,12 @@ a:hover {
   h1, h1.title, h2.title {
     font-size: 36px;
   }
-  .posts {
-    margin-left: 40px;
-    margin-right: 40px;
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 @media (min-width: 990px) {
-
   body {
     font-size: 18px;
   }
@@ -332,22 +348,24 @@ a:hover {
     margin-bottom: 0;
   }
   .masthead-inner {
+    padding: 20px;
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
   }
   .masthead .lead {
-    font-size: 22px;
+    font-size: 20px;
+    line-height:1.35;
   }
   .colophon {
     margin-top: 40px;
   }
 
   /* Remove mobile device padding from list of posts */
-  .posts {
-    margin-left: 0;
-    margin-right: 0;
+  .container {
+    padding-left: 0;
+    padding-right: 0;
   }
   /* Increase space between posts */
   .post {
@@ -367,8 +385,12 @@ a:hover {
   .masthead h1 {
     font-size: 64px;
   }
+  .masthead-inner {
+    padding: 40px;
+  }
   .masthead .lead {
     font-size: 24px;
+    line-height:1.5;
   }
 }
 
