@@ -75,11 +75,11 @@ p {
 }
 
 ul, ol {
-  padding: 0;
+  padding: 0 0 0 20px;
   margin: 0 0 15px;
 }
 li {
-  color: #888580;
+  margin-bottom:5px;
 }
 
 hr {
@@ -182,7 +182,7 @@ h1 a, h2 a {
   color: inherit;
 }
 a:hover {
-  text-decoration: underline;
+  border-bottom: dashed 1px #222;
 }
 
 
@@ -274,6 +274,9 @@ a:hover {
   display: block;
   margin: -10px 0 10px;
   color: #9a9a9a;
+}
+.post p a {
+  border-bottom: dashed 1px #222;
 }
 
 
