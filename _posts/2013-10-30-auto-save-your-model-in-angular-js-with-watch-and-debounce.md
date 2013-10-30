@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: coding, angularjs, javascript
-title: How to add Auto-Save to your Angular.js app using $watch and a Debounce function.
+title: How to Auto-Save your model in Angular.js using $watch and a Debounce function.
 ---
 
 ### The Problem
