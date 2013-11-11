@@ -1,0 +1,49 @@
+-
+  name: NextChapter
+  link: http://nextchapterbk.com
+  small_image: nextchapter_small.png
+  large_image: nextchapter_large.png
+  description: "<a href='http://nextchapterbk.com' target='_blank'>NextChapter</a> is a SaaS application for bankruptcy attorneys that helps them to streamline their processes and automatically submit bankruptcy petitions with the court. It is a single-page application that uses Angular.js and Coffeescript on the front end and Ruby on Rails as the back-end API. Grunt is used for asset compilation and Karma / Jasmine for Unit Testing."
+-
+  name: CL Direct
+  description: "CL Direct is an innovative bidding application that a local business uses to allow its customers to bid on their products. It was built using Rails 3.2, Twitter Bootstrap, HAML, .Less, and PostgreSql."
+  small_image: cl_direct_small.png
+  large_image: cl_direct_large.png
+-
+  name: Hubspot Chrome Extension
+  description: "I built a prototype Chrome extension for a client, <a href='http://hubspot.com' target='_blank'>Hubspot</a>, that inserted contextual data from the Hubspot API into a sidebar in Gmail based on which email you were viewing at the time."
+  small_image: hubspot_small.png
+  large_image: hubspot_large.png
+-
+  name: Firmability
+  link: http://firmability.com
+  description: "<a href='http://firmability.com' target='_blank'>Firmability</a> is a review site that I built for a local entrepreneur in Columbus. It allows customers to find and review firms such as Architects, Interior Designers, Developers, Manufacturers, and General Contractors. It uses Ruby-on-Rails 3.1, jQuery, and PostgreSql."
+  small_image: firmability_small.png
+  large_image: firmability_large.png
+-
+  name: PrivacyPro
+  link: http://complianceprosolutions.com/
+  description: "<a href='http://complianceprosolutions.com' target='_blank'>PrivacyPro</a> is a web-based workflow application used to maintain and act upon patient-privacy related breaches and requests within a healthcare organization, as well as a managed privacy and security library documents. It is built using Ruby-on-Rails 3.0, HAML, jQuery, SCSS, and MySQL."
+  small_image: privacy_pro_small.png
+  large_image: privacy_pro_large.png
+-
+  name: DreamTracker
+  description: "The 'DreamTracker' was an internal scheduling and task management app that I built for <a href='http://dynamit.us' target='_blank'>Dynamit</a>, a digital marketing agency. This thick-client javascript application had a very intuitive drag-and-drop interface and was built with Coffeescript, Backbone.js, jQuery UI, and was test-driven with Jasmine"
+  small_image: dream_tracker_small.png
+-
+  name: M/I Homes Land Mapper
+  description: "The Land Mapper app is a web-based mapping application for the <a href='http://mihomes.com' target='_blank'>M/I Homes</a> Land Acquisition team that is run on a 60\" HDTV and allowed them view potential land purchases, save locations of interest, take notes, view nearby businesses, etc. The front-end, a single page app, used jQuery, jQuery UI and the Bing Maps API while the back end was built using ASP.Net MVC, Linq-to-SQL, and SQL Server."
+  small_image: landmaps_small.png
+  large_image: landmaps_large.png
+-
+  name: Can I Get A Receipt With That?
+  link: http://canigetareceiptwiththat.com/
+  description: "<a href='http://canigetareceiptwiththat.com/' target='_blank'>Can I Get A Receipt With That?</a> was my entry in the 2011 Google-sponsored Data-Viz Challenge, which was a contest in which participants were to come up with a creative way to vizualize how our tax dollars are spent by the US federal government. The source code can be found on <a href='https://github.com/adamalbrecht/can_i_get_a_receipt_with_that' target='_blank'>GitHub</a>."
+  small_image: can_i_get_a_receipt_with_that_small.png
+  large_image: can_i_get_a_receipt_with_that_large.png
+-
+  name: Hacker News for Chrome
+  link: https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk
+  description: Hacker News for Chrome is a handy Chrome Extension for the popular startup website, <a href='http://news.ycombinator.com' target='_blank'>Hacker News</a>. You can find the extension <a href='https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk' target='_blank'>here</a> and the source code on <a href='https://github.com/adamalbrecht/hacker-news-for-chrome/' target='_blank'>Github</a>.
+  small_image: hacker_news_for_chrome_small.png
+  large_image: hacker_news_for_chrome_large.png
