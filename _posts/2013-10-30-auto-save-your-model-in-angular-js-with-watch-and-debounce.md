@@ -55,7 +55,7 @@ app.controller('myCtrl', function($scope, $debounce) {
 {% endhighlight %}
 
 
-### Potential Gotcha: Validation
+### Potential Gotcha #1: Validation
 
 Angular.js doesn't provide any sort of model validation (or any model-related code at all) and instead recommends that you use [HTML5 form validation](http://diveintohtml5.info/forms.html#validation). But since we're not actually firing a submit event on our forms, we need to take care of this in a different way.
 
@@ -79,5 +79,22 @@ var saveUpdates = function(newVal, oldVal) {
 {% endhighlight %}
 
 If you need more complex validators, you'll need to create custom directives that make use of the [$setValidity](http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#methods_$setvalidity) method.
+
+### Potential Gotcha #2: Preventing Double-Saves on Create
+
+One problem I ran into was that when I auto-saved a brand new object was that the object was replaced with the version from the server, causing the `$watch` function to be triggered again. The result was that my object was immediately saved a second time, unnecessarily. The solution to this is fairly simple: just set a `saveInProgress` flag so that it never starts another save before the previous one finishes. This will also prevent a double-save caused by a save call that is slower than the timeout on your debounce function. It might look something like this:
+
+{% highlight js %}
+var saveInProgress = false;
+var saveFinished = function() { saveInProgress = false; };
+var saveUpdates = function(newVal, oldVal) {
+  if ((newVal != oldVal) && ($scope.myForm.$valid) && (!saveInProgress)) {
+    saveInProgress = true;
+    saveFunction().then(saveFinished, saveFinished); // both success and error promises
+  }
+};
+{% endhighlight %}
+
+A related and much harder problem is how to resolve changes to the model that happen during the round-trip of the save. I recently [had a discussion on Twitter about this](https://twitter.com/realtarnschaf/status/407489612227940352), but I think it really comes down to designing your UX to discourage or prevent your user from making changes to the model while still waiting on that first `POST` creation request. If you also replace your model with the server's version on subsequent updates (which is generally not recommended), the problem gets a little trickier.
 
 And that's it! This is an extremely simple example, so if you have any questions or comments, give me a shout out [on Twitter](http://twitter.com/adam_albrecht).
