@@ -8,8 +8,8 @@ title: Books
   <div class='books'>
     {% for book in site.data.books %}
     <div class='book'>
-      <h2 class='book-title'><a href='{{book.amazon_link}}' target='_blank'>{{book.title}}</a></h2>
-      <a href='{{book.amazon_link}}' target='_blank'><img class='book-cover' src='/public/img/books/{{book.image}}' alt='{{book.title}}' /></a>
+      <h2 class='book-title'><a href='{{book.link}}' target='_blank'>{{book.title}}</a></h2>
+      <a href='{{book.link}}' target='_blank'><img class='book-cover' src='/public/img/books/{{book.image}}' alt='{{book.title}}' /></a>
       <div class='book-content'>
         <ul class='book-info'>
           <li class='book-author'><strong>Author:</strong> {{book.author}}</li>
@@ -17,7 +17,7 @@ title: Books
         </ul>
         <p>{{book.overview}}</p>
         <ul class='book-links'>
-          <li><a href='{{book.amazon_link}}' target='_blank'>Amazon Link</a></li>
+          <li><a href='{{book.link}}' target='_blank'>Link</a></li>
         </ul>
       </div>
     </div>

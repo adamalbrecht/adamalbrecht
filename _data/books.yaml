@@ -1,9 +1,9 @@
 -
   title: "SMACSS: Scalable and Modular Architecture for CSS"
   author: Jonathan Snook
-  rating: 8
+  rating: 9
   image: smacss.png
-  amazon_link: "http://www.amazon.com/gp/product/0985632100/?tag=adamalbrechtc-20"
+  link: "http://smacss.com/"
   overview: "I consider my knowledge of CSS to be pretty top-notch and I try my best to keep it organized, but I've never really had a good 'system' for implementing and organizing it. SMACSS doesn't break any new ground, but it provides a well thought-out and easily-referenceable guide for writing and organizing your stylesheets. The book teaches you how to write CSS that is organized, efficient, and easy to adapt to the changing requirements of a project. Highly recommended for any web developer."
 
 -
@@ -11,5 +11,13 @@
   author: John Warrillow
   rating: 7
   image: built_to_sell.jpg
-  amazon_link: http://www.amazon.com/gp/product/B004IYISQW/?tag=adamalbrechtc-20
+  link: http://www.amazon.com/gp/product/B004IYISQW/?tag=adamalbrechtc-20
   overview: "The first business I helped start is quite the opposite of being 'built to sell'. It is very much a hands-on enterprise that requires constant attention from the founders. So for the new business I'm working on, I want to make sure every aspect is automated and 'teachable' to future employees. Of course, this is not all it takes to make business easier to sell, and that's what the book dives deeply into. The writing style is quite a bit different from most business books in that it uses an over-arching story about a (presumably) fictitious business owner who wants to sell his business. The narrative is intermixed with related lessons. While I think the example business used in the story is a bit overly simplistic, the suggestions are still very much applicable in the real world. Recommended if you're working company and looking to sell in the future, but take all suggestions with a grain of salt. All businesses are different and many are not suited to all of the techniques presented."
+
+-
+  title: "Vagrant: Up and Running"
+  author: Mitchell Hashimoto
+  rating: 6
+  image: vagrant_up_and_running.jpg
+  link: http://www.amazon.com/gp/product/B00D3VH4IO/?tag=adamalbrechtc-20
+  overview: "Vagrant is a tool I'd been interested in checking out for a while. In a nutshell, Vagrant allows you to seemlessly setup virtual environments for your projects so that (a) your dev environment more closely mirrors your production environment, (b) you don't have to install all the dependencies (databases, etc) on your machine, and (c) you can automate your dev environment and make it easier for team members to get the project up and running. This book provides a great introduction to Vagrant and even gets into some more advanced features such as automation with chef or puppet and various plugins. While I really like the concept of Vagrant, I've still had a hard time integrating it into my projects for a couple reasons. First, I found that my rails apps ran significantly slower from the virtual machine, which wasn't unexpected on my Macbook Air. And second, I'm not on any large teams where we need to onramp new people very often. Having said that, I can definitely see where it would be useful for a lot of projects, particularly in the open source community."
