@@ -32,9 +32,9 @@ And I'd like it to have the following features:
 This is a fairly simple directive, with a link function that's only a few lines long. The `show: '='` in the isolated scope sets up a 2-way binding between the variable given to the `show` attribute and the `show` variable on our scope. Setting this to true or false will toggle our modal dialog. And we check for height and width attributes and, if set, give the modal dialog an inline style. Finally, the `hideModal()` method simply sets the `show` variable to false.
 
 {% highlight js %}
-app.directive('modalDialog', function {
+app.directive('modalDialog', function() {
   return {
-    restrict: 'E', // Must be a <modal-dialog> element, not an attribute or class.
+    restrict: 'E',
     scope: {
       show: '='
     },
@@ -43,14 +43,15 @@ app.directive('modalDialog', function {
     link: function(scope, element, attrs) {
       scope.dialogStyle = {};
       if (attrs.width)
-        scope.dialogStyle['width'] = attrs.width;
+        scope.dialogStyle.width = attrs.width;
       if (attrs.height)
-        scope.dialogStyle['height'] = attrs.height;
+        scope.dialogStyle.height = attrs.height;
       scope.hideModal = function() {
-        scope.showOn = false;
+        scope.show = false;
       };
     },
     template: '...' // See below
+  };
 });
 {% endhighlight %}
 
@@ -74,7 +75,7 @@ I'm not going to spend any time going over this, but I will say that the followi
 
 {% highlight css %}
 .ng-modal-overlay {
-  // A dark translucent div that covers the whole screen
+  /* A dark translucent div that covers the whole screen */
   position:absolute;
   z-index:9999;
   top:0;
@@ -85,12 +86,12 @@ I'm not going to spend any time going over this, but I will say that the followi
   opacity: 0.8;
 }
 .ng-modal-dialog {
-  // A centered div above the overlay with a box shadow.
+  /* A centered div above the overlay with a box shadow. */
   z-index:10000;
   position: absolute;
-  width: 50%; // Default
+  width: 50%; /* Default */
 
-  // Center the dialog
+  /* Center the dialog */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -124,7 +125,7 @@ Finally, to put it all together, you'll need to add a small bit of code to your 
 
 {% highlight html %}
 <button ng-click='toggleModal()'>Open Modal Dialog</button>
-<modal-dialog show='modalShown' width='750px' height='90%'>
+<modal-dialog show='modalShown' width='750px' height='60%'>
   <p>Modal Content Goes here<p>
 </modal-dialog>
 {% endhighlight %}
@@ -138,4 +139,7 @@ app.controller('MyCtrl', function($scope) {
 });
 {% endhighlight %}
 
-And that's it! I've put a slightly more polished and configurable version of this directive up [on Github](http://github.com/adamalbrecht/ngModal).
+### All Together
+
+And that's it! I put all the code together in a demo [on JSBin](http://jsbin.com/aDuJIku/2). Check it out. And I've put a slightly more polished and configurable version of this directive up [on Github](http://github.com/adamalbrecht/ngModal).
+
