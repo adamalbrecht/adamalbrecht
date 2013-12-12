@@ -138,6 +138,4 @@ app.controller('MyCtrl', function($scope) {
 });
 {% endhighlight %}
 
-### Triggering the Modal on a route change with UI-Router
-
 And that's it! I've put a slightly more polished and configurable version of this directive up [on Github](http://github.com/adamalbrecht/ngModal).
