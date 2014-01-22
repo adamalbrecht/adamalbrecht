@@ -10,7 +10,7 @@ For my current Angular app, I wanted a nice way to point out and explain the var
 
 ![ngOnboarding](/public/img/ng_onboarding_screenshot.png)
 
-The library consists of a directive (`<onboarding-popover>`) that requires an array of 'steps' to be setup in your controller Each step represents a popover element that may optionally point to an element on the screeen. Your step configuration might look something like this:
+The library consists of a directive (`<onboarding-popover>`) that requires an array of 'steps' to be setup in your controller. Each step represents a popover element that may optionally point to an element on the screeen. Your step configuration might look something like this:
 
 {% highlight js %}
 $scope.onboardingSteps = [
