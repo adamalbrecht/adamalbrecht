@@ -30,6 +30,6 @@ $scope.onboardingSteps = [
 ];
 {% endhighlight %}
 
-Unfortunately, I had to make 2 design decisions that I don't particularly like. First, I made jQuery a dependency. And second, I force you to reference CSS selectors in the controller, which is generally frowned upon in Angular. Both of these were to support anchoring the popovers to elements on the page. If you can think of a better way to implement this, I'd love to hear it.
+Unfortunately, I had to make a design decisions that I don't particularly like, which is forcing you to reference CSS selectors in the controller. This is generally frowned upon in Angular, but I don't see a another way to support anchoring the popovers to elements on the page. If you can think of a better way to implement this, I'd love to hear it.
 
 While it's still in development and not well-tested, it seems to work pretty well, so check it out!
