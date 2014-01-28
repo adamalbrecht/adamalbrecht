@@ -7,11 +7,11 @@ title: Porfolio
   <h1 class='page-title'>Portfolio</h1>
   <ul class='project-categories clearfix'>
     {% for category in site.data.projects %}
-    <li><a href='#{{category[0]}}'>{{category[0] | titleize}}</a></li>
+    <li><a href='#{{category[0]}}'>{{category[0]}}</a></li>
     {% endfor %}
   </ul>
   {% for category in site.data.projects %}
-    <h4 id='{{category[0]}}' class='project-category-title'>{{category[0] | titleize}}</h4>
+    <h4 id='{{category[0]}}' class='project-category-title'>{{category[0]}}</h4>
     <ul class='projects'>
       {% for project in category[1] %}
         <li class='project clearfix'>

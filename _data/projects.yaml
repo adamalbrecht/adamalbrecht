@@ -1,4 +1,4 @@
-products:
+'Products':
   -
     name: PrivacyPro
     link: http://complianceprosolutions.com/
@@ -12,7 +12,7 @@ products:
     large_image: nextchapter_large.png
     description: "<a href='http://nextchapterbk.com' target='_blank'>NextChapter</a> is a SaaS application for bankruptcy attorneys that helps them to streamline their processes and automatically submit bankruptcy petitions with the court. It is a single-page application that uses Angular.js and Coffeescript on the front end and Ruby on Rails as the back-end API."
 
-consulting_projects:
+'Consulting Projects':
   -
     name: CL Direct
     description: "CL Direct is an innovative bidding application that a local business uses to allow its customers to bid on their products. It was built using Rails 3.2, Twitter Bootstrap, HAML, .Less, and PostgreSql."
@@ -39,7 +39,7 @@ consulting_projects:
     small_image: landmaps_small.png
     large_image: landmaps_large.png
 
-open_source:
+'Open Source':
   -
     name: ngQuickDate
     link: github.com/adamalbrecht/ngQuickDate
