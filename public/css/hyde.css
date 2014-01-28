@@ -378,59 +378,6 @@ a:hover {
   float:left;
 }
 
-/* Books
--------------------------------------------------- */
-.books-page {
-  padding: 40px 0;
-}
-.book-cover {
-  float: left;
-  margin-right:20px;
-}
-.book-content {
-}
-.books {
-  margin-top:50px;
-}
-.book {
-}
-.book:before, .book:after {
-	content: "\0020";
-	display: block;
-	height: 0;
-	overflow: hidden;
-}
-	
-.book:after {
-	clear: both;
-}
-.book-buy-link {
-  font-style: italic;
-}
-.book-info {
-  margin: 0;
-  padding: 0;
-  margin: 10px 0;
-}
-.book-info > li {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  margin-right:15px;
-}
-.book-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.book-links > li {
-  margin: 0;
-  padding: 0;
-}
-.book-links > li:before {
-   content: "\00BB  ";
-}
-
 /* BrowseHappy
 -------------------------------------------------- */
 .browsehappy {
