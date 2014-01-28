@@ -338,8 +338,10 @@ a:hover {
 }
 .project-categories a {
   color: #777;
-  border-bottom: dashed 1px #777;
   font-style: italic;
+}
+.project-categories a:hover {
+  border-bottom: dashed 1px #777;
 }
 .project-category-title {
   font-size:150%;
