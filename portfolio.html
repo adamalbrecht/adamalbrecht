@@ -3,15 +3,23 @@ layout: default
 title: Porfolio
 ---
 
-<div class='page'>
-  <h1>Portfolio</h1>
-  <ul class='projects'>
-  {% for project in site.data.projects %}
-    <li>
-      <h6>{{project.name}}</h6>
-      <img src='/public/img/{{project.small_image}}'/>
-      <p>{{project.description}}</p>
-    </li>
-  {% endfor %}
+<div class='page portfolio'>
+  <h1 class='page-title'>Portfolio</h1>
+  <ul class='project-categories clearfix'>
+    {% for category in site.data.projects %}
+    <li><a href='#{{category[0]}}'>{{category[0] | titleize}}</a></li>
+    {% endfor %}
   </ul>
+  {% for category in site.data.projects %}
+    <h4 id='{{category[0]}}' class='project-category-title'>{{category[0] | titleize}}</h4>
+    <ul class='projects'>
+      {% for project in category[1] %}
+        <li class='project clearfix'>
+          <h6 class='project-title'>{{project.name}}</h6>
+          <img src='/public/img/{{project.small_image}}' class='project-image'/>
+          <p class='project-description'>{{project.description}}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 </div>
