@@ -2,7 +2,7 @@
   -
     name: PrivacyPro
     link: http://complianceprosolutions.com/
-    description: "<a href='http://complianceprosolutions.com' target='_blank'>PrivacyPro</a> is a web-based workflow application used to maintain and act upon patient-privacy related breaches and requests within a healthcare organization, as well as a managed privacy and security library documents. It is used in dozens of hospitals across the country. It is built using Ruby-on-Rails 3.0, HAML, jQuery, SCSS, and MySQL."
+    description: "<a href='http://complianceprosolutions.com' target='_blank'>PrivacyPro</a> is a web-based workflow application used to maintain and act upon patient-privacy related breaches and requests within a healthcare organization, as well as a managed privacy and security library documents. It is used in dozens of hospitals across the country. Built using Ruby-on-Rails 3.0, HAML, jQuery, SCSS, and MySQL."
     small_image: privacy_pro_small.png
     large_image: privacy_pro_large.png
   - 
@@ -42,20 +42,20 @@
 'Open Source':
   -
     name: ngQuickDate
-    link: github.com/adamalbrecht/ngQuickDate
-    description: ngQuickDate is a datepicker directive/plugin for Angular.js that stresses speed of data entry and configuration. Built with Coffeescript, Stylus, Grunt, and Jasmine.
+    link: http://github.com/adamalbrecht/ngQuickDate
+    description: "<a href='http://github.com/adamalbrecht/ngQuickDate'>ngQuickDate</a> is a datepicker directive/plugin for Angular.js that stresses speed of data entry and configuration. Built with Coffeescript, Stylus, Grunt, and Jasmine. You can find the source code on <a href='http://github.com/adamalbrecht/ngQuickDate'>on Github</a>."
     small_image: ng_quick_date_small.png
     large_image: ng_quick_date_large.png
   -
     name: ngOnboarding
-    link: github.com/adamalbrecht/ngOnboarding
-    description: ngOnboarding is a directive/plugin for Angular.js helps developers implement a better onboarding experience for their users by pointing out portions of the page one at a time using tooltips. Built with Coffeescript, .Less, and Grunt.
+    link: http://github.com/adamalbrecht/ngOnboarding
+    description: "<a href='http://github.com/adamalbrecht/ngOnboarding'>ngOnboarding</a> is a directive/plugin for Angular.js helps developers implement a better onboarding experience for their users by pointing out portions of the page one at a time using tooltips. Built with Coffeescript, .Less, and Grunt. You can find the source code on <a href='http://github.com/adamalbrecht/ngOnboarding'>on Github</a>."
     small_image: ng_onboarding_small.png
     large_image: ng_onboarding_large.png
   -
     name: Hacker News for Chrome
     link: https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk
-    description: Hacker News for Chrome is a handy Chrome Extension for the popular startup website, <a href='http://news.ycombinator.com' target='_blank'>Hacker News</a>. You can find the extension <a href='https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk' target='_blank'>here</a> and the source code on <a href='https://github.com/adamalbrecht/hacker-news-for-chrome/' target='_blank'>Github</a>.
+    description: "Hacker News for Chrome is a handy Chrome Extension for the popular startup website, <a href='http://news.ycombinator.com' target='_blank'>Hacker News</a>. You can find the extension <a href='https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk' target='_blank'>here</a> and the source code on <a href='https://github.com/adamalbrecht/hacker-news-for-chrome/' target='_blank'>Github</a>."
     small_image: hacker_news_for_chrome_small.png
     large_image: hacker_news_for_chrome_large.png
   -
