@@ -49,7 +49,7 @@
   -
     name: ngOnboarding
     link: github.com/adamalbrecht/ngOnboarding
-    description: ngngOnboarding is a directive/plugin for Angular.js helps developers implement a better onboarding experience for their users by pointing out portions of the page one at a time using tooltips.
+    description: ngOnboarding is a directive/plugin for Angular.js helps developers implement a better onboarding experience for their users by pointing out portions of the page one at a time using tooltips. Built with Coffeescript, .Less, and Grunt.
     small_image: ng_onboarding_small.png
     large_image: ng_onboarding_large.png
   -
