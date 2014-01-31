@@ -6,6 +6,8 @@ title: A Better Date Picker in Angular.js
 
 I wasn't particularly happy with any of the datepicker directives out there for Angular.js, so I decided to build one myself. I did it out of a need on my current project but also because I wanted to learn the ins and outs of directives. You can find the library [on Github](https://github.com/adamalbrecht/ngQuickDate).
 
+<!-- more -->
+
 ### Requirements:
 
 * Easy to use via the keyboard. I hate when I'm using a form-centric application and there's one particular field that I can't just tab through.

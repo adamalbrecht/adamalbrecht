@@ -8,6 +8,8 @@ title: Generate Clean, Testable PDF Reports in Ruby/Rails with Prawn
 
 I generally hate PDF's. The file format is complex and designed to mimic physical paper documents, which really has little to do with the web. But unfortunately, PDF's are still very common and often expected, particularly when working on businesses applications. I have a legacy ruby-on-rails application with a number of PDF reports and I recently took the time to refactor them in a clean and testable manner. Here's how I went about that process:
 
+<!-- more -->
+
 ### The Report Requirements
 
 <img src='/public/img/example_pdf_report.png' style='float:right; margin: 10px; margin-right:0;' />

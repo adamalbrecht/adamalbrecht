@@ -1,5 +1,6 @@
 name:         Adam Albrecht
-markdown:     redcarpet
+markdown:     maruku
 permalink:    pretty
 pygments:     true
 paginate:     5
+excerpt_separator: <!-- more -->

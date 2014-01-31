@@ -6,6 +6,8 @@ title: A Better Onboarding Experience in your Angular.js Application
 
 "Onboarding" is one of those things we sometimes forget about when developing an application, but it really deserves more attention. Showing the user how to use your app can be critical in retaining them. Some people might say that if you need onboarding, your app just needs to have a better UX, but I don't think this is practical in all situations, particularly complex business applications.
 
+<!-- more -->
+
 For my current Angular app, I wanted a nice way to point out and explain the various features of the application right after signup. I looked through a few javascript plugins such as [Tourist.js](http://easelinc.github.io/tourist/), [Guiders.js](http://jeffpickhardt.com/guiders/), and a few others, but none seemed to work well with angular, so I decided to write my own, which I'm calling [ngOnboarding](https://github.com/adamalbrecht/ngOnboarding).
 
 ![ngOnboarding](/public/img/ng_onboarding_screenshot.png)

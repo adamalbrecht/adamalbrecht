@@ -10,6 +10,8 @@ title: How to Create a Simple Modal Dialog Directive in Angular.js
 
 I've used a dozen or so modal / lightbox plugins over the years, almost exclusively jQuery-based. But you know what I didn't realize until fairly recently? Modals are easy to build yourself from scratch. So let's make one in the Angular fashion.
 
+<!-- more -->
+
 ### The Requirements
 
 I want to be able to create a modal with the following HTML:

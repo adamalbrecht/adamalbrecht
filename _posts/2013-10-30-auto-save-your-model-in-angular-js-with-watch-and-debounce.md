@@ -8,6 +8,8 @@ title: How to Auto-Save your model in Angular.js using $watch and a Debounce fun
 
 Currently, I'm working on an Angular app that is very form-centric. Fields and fields and more fields. I want to make the form-filling process as quick and painless as possible, so I'm trying to implement auto-save.
 
+<!-- more -->
+
 ### First Attempt
 
 My first attempt at an auto-save solution (while still being very new to Angular) was a directive that, based on the type of element, waited for either a `change` or `blur` event to occur and communicated to the controller (via a service) that it was time to save the model.
