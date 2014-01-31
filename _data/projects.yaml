@@ -55,7 +55,7 @@
   -
     name: Hacker News for Chrome
     link: https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk
-    description: "Hacker News for Chrome is a handy Chrome Extension for the popular startup website, <a href='http://news.ycombinator.com' target='_blank'>Hacker News</a>. You can find the extension <a href='https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk' target='_blank'>here</a> and the source code on <a href='https://github.com/adamalbrecht/hacker-news-for-chrome/' target='_blank'>Github</a>."
+    description: "Hacker News for Chrome is a handy Chrome Extension for the popular startup website, <a href='http://news.ycombinator.com' target='_blank'>Hacker News</a>. You can find the extension <a href='https://chrome.google.com/webstore/detail/hacker-news/geancnifhbkbjijfkcjjdnfemppmcjmk' target='_blank'>here</a> and the source code (which is very ugly - I'm planning to clean it up soon) <a href='https://github.com/adamalbrecht/hacker-news-for-chrome/' target='_blank'>on Github</a>."
     small_image: hacker_news_for_chrome_small.png
     large_image: hacker_news_for_chrome_large.png
   -
