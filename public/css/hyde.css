@@ -283,6 +283,10 @@ a:hover {
   border-bottom: dashed 1px #222;
 }
 
+.read-more {
+  border-bottom: dashed 1px #222;
+}
+
 
 /* Pagination
 -------------------------------------------------- */
