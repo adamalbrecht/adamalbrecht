@@ -287,6 +287,10 @@ a:hover {
   border-bottom: dashed 1px #222;
 }
 
+.post img {
+  max-width:100%;
+}
+
 
 /* Pagination
 -------------------------------------------------- */
