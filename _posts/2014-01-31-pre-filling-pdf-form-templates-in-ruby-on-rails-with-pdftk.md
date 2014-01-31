@@ -2,7 +2,7 @@
 
 layout: post
 tags: coding, ruby, rails, pdf
-title: Pre-Filling PDF Forms Templates in Ruby-on-Rails with PDFtk
+title: Pre-Filling PDF Form Templates in Ruby-on-Rails with PDFtk
 
 ---
 
