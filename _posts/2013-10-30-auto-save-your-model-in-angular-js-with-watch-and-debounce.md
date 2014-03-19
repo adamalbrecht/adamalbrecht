@@ -4,6 +4,11 @@ tags: coding, angularjs, javascript
 title: How to Auto-Save your model in Angular.js using $watch and a Debounce function.
 ---
 
+### The Problem
+
+Currently, I'm working on an Angular app that is very form-centric. Fields and fields and more fields. I want to make the form-filling process as quick and painless as possible, so I'm trying to implement auto-save.
+
+<!-- more -->
 
 ------
 
@@ -12,12 +17,6 @@ title: How to Auto-Save your model in Angular.js using $watch and a Debounce fun
 I've done quite a bit more auto-saving on my current project and I've updated my post with some slightly better methods. It also now has a solution for when you are trying to auto-save multiple items in an array. I combined a lot of the info below into [this live example](http://jsbin.com/xohugepe/1/edit?html,js,output).
 
 ------
-
-### The Problem
-
-Currently, I'm working on an Angular app that is very form-centric. Fields and fields and more fields. I want to make the form-filling process as quick and painless as possible, so I'm trying to implement auto-save.
-
-<!-- more -->
 
 ### First Attempt
 
