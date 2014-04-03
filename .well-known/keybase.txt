@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/adamalbrecht
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://adamalbrecht.com
+  * I am adamalbrecht (https://keybase.io/adamalbrecht) on keybase.
+  * I have a public key with fingerprint FCEF 46E7 E551 70F2 CE7F  470F E765 E448 13AA BF38
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "fcef46e7e55170f2ce7f470fe765e44813aabf38",
+            "host": "keybase.io",
+            "key_id": "E765E44813AABF38",
+            "uid": "770795533315dd157d597772428cac00",
+            "username": "adamalbrecht"
+        },
+        "service": {
+            "hostname": "adamalbrecht.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1396496585,
+    "expire_in": 157680000,
+    "prev": "2af698ac06e424d34456672094500ad002f992a2f6f21e0ff285f0b5d764d972",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owFtkV1IFFEUx3dTi4QyMaiwQi4Efiw2Mzt37swapKWVBKKF2UOxzceddXR3Z9wd
+v9MELVAyP4JCERKCsg9SRF/U0oeoJCXJEiMShMwKi3ywNEu7s9Rb9+Xee87v/z/n
+cJq3hNki7fP4/bGYu8O8/fnIimQ7eWB6tBJIulIOXJWgEIcuVfN7cMAIaH4TuIAq
+Y5XlMMIQ0ohSGRkjlSUPjDiIWZannaIoqU4eOEC+HrQUxEYSgzhZ00mMfNyaQqIZ
+hM8I8Wlph46E+OJQAiEKCRA6nU4aKgoNkQIFhBDDMrwsyhRlgUEc8Is+TGhREX2i
+VwpgOd8EVQ5AMiWajK2+rfL/oZJl3Uc8jIBu6rLuJdl80zRcltgsNyy6FEvuvz5u
+SfMrZH4iKMGBoKb7gYsmpGxqljHtFDhW4CAPHQCXGVoAuzWLgIjjKXKsMriEWDKi
+ygk8aZ/DLMMqTpaFHIcYSmAhRYkKRTGqIDAio3IqQ2NKVRkeqpQEFcSxioAYYE1W
+5NeBy0naFD3EMqh5/KJZHMCgqt6+O9xmj7RtjNhgbdAWuXnbv70+6di0ftzeaDie
+/QofclyqGWzokKq2SnFrtE/ru+OYiH91b6J27TV95ty60Lt3HmbdzutsfdEWvdhy
+dckTk7IQ9zMhqmBl7Frf4PLD6vI3M51C69jQYj9lpiSMXCiNbW0/m/bFljFiN8Pm
+Uwt29peUTiuH96Svji+j+O8ZXdHZ44+2p3sf7BvQv/ZmG80rZdWfGxNuREz+SKqd
+LTq6a3/b+aiU+oHMWL5iJrP9/uPC0a7k61MHkxpyK15Kw3W1nyYcdaBsrqIna7Wi
+qQ+1XjnV0VLD5S6ElSXOAcObszRufNvBvrNP0IkfJxObO6cuzuaduNzdmNN/uulW
+94enb8Hvmz2pfwA=
+=kqwK
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/adamalbrecht
+
+==================================================================
