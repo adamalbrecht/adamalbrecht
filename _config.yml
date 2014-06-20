@@ -1,7 +1,8 @@
-name:         Adam Albrecht
-markdown:     maruku
+title:        Adam Albrecht
+email:        adam.albrecht@gmail.com
+markdown:     kramdown
 permalink:    pretty
-pygments:     true
+highlighter:  true
 paginate:     5
 excerpt_separator: <!-- more -->
 include: [".well-known"]
