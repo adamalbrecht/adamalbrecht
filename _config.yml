@@ -2,8 +2,7 @@ title:        Adam Albrecht
 email:        adam.albrecht@gmail.com
 markdown:     kramdown
 permalink:    pretty
-highlighter:  true
-pyments:      true
+highlighter:  pygments
 paginate:     5
 excerpt_separator: <!-- more -->
 include: [".well-known"]
