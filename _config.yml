@@ -3,6 +3,9 @@ email:        adam.albrecht@gmail.com
 markdown:     kramdown
 permalink:    pretty
 highlighter:  true
+pyments:      true
 paginate:     5
 excerpt_separator: <!-- more -->
 include: [".well-known"]
+twitter_username: adam_albrecht
+github_username:  adamalbrecht
