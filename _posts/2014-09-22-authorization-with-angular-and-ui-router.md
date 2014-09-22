@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: coding, angularjs, ui-router, authorization, javascript, coffeescript
-title: Authorization in Angular.js and UI-Router
+title: Authorization with Angular.js and UI-Router
 ---
 
 While working on an angular.js application recently, I found myself needing some form of authorization logic (not to be confused with authentication / login). I needed to restrict content in my app based on a user's role as well as some other factors. At first, I created a single `AuthService` service that dealt with login, authorization, and session management. But this felt messy and violated the [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle), so I decided to make something cleaner. My goal was for the API to look something like this:
