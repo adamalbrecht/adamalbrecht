@@ -22,7 +22,7 @@ By doing it this way, I was fairly sure I could split my formerly monolithic `Au
 
 <!-- more -->
 
-In the ruby world, I've used both [CanCan]() and [Pundit]() and so I drew a lot of inspiration from them. But at the same time, I was mindful that client-side authorization is never as complex as server side. You should never need to use client side authorization to filter data (that should be done server side), but only to show/hide pages and pieces of content.
+In the ruby world, I've used both [CanCan](https://github.com/CanCanCommunity/cancancan) and [Pundit](https://github.com/elabs/pundit) and so I drew a lot of inspiration from them. But at the same time, I was mindful that client-side authorization is never as complex as server side. You should never need to use client side authorization to filter data (that should be done server side), but only to show/hide pages and pieces of content.
 
 So first, I created a constant containing a set of permissions:
 
