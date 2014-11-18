@@ -52,7 +52,7 @@ To implement this solution, there is nothing to add to your view. But in the con
 {% endhighlight %}
 
 {% highlight js %}
-app.controller('myCtrl', function($scope, $debounce) {
+app.controller('myCtrl', function($scope, $timeout) {
   $scope.myModel = {};
   var timeout = null;
   var saveUpdates = function() {
