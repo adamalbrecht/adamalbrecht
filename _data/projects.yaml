@@ -60,7 +60,7 @@
     large_image: hacker_news_for_chrome_large.png
   -
     name: Can I Get A Receipt With That?
-    link: http://canigetareceiptwiththat.com/
+    link: http://canigetareceiptwiththat.herokuapp.com
     description: "<a href='http://canigetareceiptwiththat.com/' target='_blank'>Can I Get A Receipt With That?</a> was my entry in the 2011 Google-sponsored Data-Viz Challenge, which was a contest in which participants were to come up with a creative way to vizualize how our tax dollars are spent by the US federal government. The source code can be found on <a href='https://github.com/adamalbrecht/can_i_get_a_receipt_with_that' target='_blank'>GitHub</a>."
     small_image: can_i_get_a_receipt_with_that_small.png
     large_image: can_i_get_a_receipt_with_that_large.png
