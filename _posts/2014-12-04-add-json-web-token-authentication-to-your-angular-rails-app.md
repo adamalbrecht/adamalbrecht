@@ -110,7 +110,7 @@ class ApplicationController < ActionController::Base
   def authenticate_request
     if auth_token_expired?
       fail AuthenticationTimeoutError
-    elsif !current_user
+    elsif !@current_user
       fail NotAuthenticatedError
     end
   end
