@@ -4,6 +4,12 @@ tags: coding, angularjs, javascript
 title: A Better Date Picker in Angular.js
 ---
 
+### UPDATE (March 14th, 2015)
+
+When I first wrote this library, I didn't have a great understanding of the [ngModelController API](https://docs.angularjs.org/api/ng/type/ngModel.NgModelController), nor good directive design. So I wouldn't recommend this library anymore. I started on a replacement library [here](https://github.com/adamalbrecht/angular-date-picker-polyfill), though it's not quite ready for production use.
+
+---
+
 I wasn't particularly happy with any of the datepicker directives out there for Angular.js, so I decided to build one myself. I did it out of a need on my current project but also because I wanted to learn the ins and outs of directives. You can find the library [on Github](https://github.com/adamalbrecht/ngQuickDate).
 
 <!-- more -->
