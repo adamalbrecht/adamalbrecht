@@ -17,7 +17,7 @@ I won't make this an article comparing and contrasting the libraries (a google s
   * The "Everything is a component" paradigm is an extremely pleasant and simple way to create user interfaces.
   * Everything is just javascript. Even the "templates".
 
-And I'm sure there are others. Angular is still a great framework, but at the end of the day, I enjoy writing code in React quite a bit more.
+And I'm sure there are others. Angular is still a great framework, but at the end of the day, I enjoy writing code in React quite a bit more. And interestingly enough, while I had previously been under the impression that React was a 1-trick pony that you used when performance was a big requirement, the fact that it's extremely fast probably wouldn't make the top 10 reasons why I would pick it over other frameworks.
 
 One of the biggest differences between the two libraries is their scope (and this can be both good and bad). React only provides the view layer, while Angular provides quite a bit more, such as libraries for promises, http, dependency injection, etc, etc.
 
