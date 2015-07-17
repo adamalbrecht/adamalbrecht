@@ -4,6 +4,8 @@ tags: coding, angularjs, rails, authentication, javascript
 title: Authenticating your Angular / Rails App with JSON Web Tokens
 ---
 
+*Note: There have been some changes in the JWT Gem that make some of the below not work exactly right (it'll still be about 90% the same). Specifically, they added expiration support.*
+
 ## Overview
 
 I'm a big proponent of rolling your own authentication solution, especially if you're only doing simple username/password based logins (as opposed to logging in via an OAuth provider). I've tried to use [Devise](https://github.com/plataformatec/devise) on a number of Rails apps, but I always end up ripping it out. It's not because Devise is a bad gem, but because it always takes me more time to customize it to my liking than it does to just write everything myself. And the flexibilitity of a custom solution almost always comes in handy down the road. I have generally implemented it the same way that Ryan Bates does in [this Railscasts episode](http://railscasts.com/episodes/250-authentication-from-scratch-revised).
