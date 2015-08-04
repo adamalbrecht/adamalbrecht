@@ -4,11 +4,11 @@ tags: coding, angularjs, rails, authentication, javascript
 title: Authenticating your Angular / Rails App with JSON Web Tokens
 ---
 
-*Note: There have been some changes in the JWT Gem that make some of the below not work exactly right (it'll still be about 90% the same). Specifically, they added expiration support.*
+*UPDATE: There have been some changes in the JWT Gem that make some of the below not work exactly right (it'll still be about 90% the same). Specifically, they added expiration support. See [my post on the same topic, but using React.js]({% post_url 2015-07-20-authentication-using-json-web-tokens-using-rails-and-react %}). The server side code in this post will work just as well with Angular.*
 
 ## Overview
 
-I'm a big proponent of rolling your own authentication solution, especially if you're only doing simple username/password based logins (as opposed to logging in via an OAuth provider). I've tried to use [Devise](https://github.com/plataformatec/devise) on a number of Rails apps, but I always end up ripping it out. It's not because Devise is a bad gem, but because it always takes me more time to customize it to my liking than it does to just write everything myself. And the flexibilitity of a custom solution almost always comes in handy down the road. I have generally implemented it the same way that Ryan Bates does in [this Railscasts episode](http://railscasts.com/episodes/250-authentication-from-scratch-revised).
+I'm a big proponent of rolling your own authentication solution, especially if you're only doing simple username/password based logins (as opposed to logging in via an OAuth provider). I've tried to use [Devise](https://github.com/plataformatec/devise) on a number of Rails apps, but I always end up ripping it out. It's not because Devise is a bad gem, but because it always takes me more time to customize it to my liking than it does to just write everything myself. And the flexibility of a custom solution almost always comes in handy down the road. I have generally implemented it the same way that Ryan Bates does in [this Railscasts episode](http://railscasts.com/episodes/250-authentication-from-scratch-revised).
 
 But now that most of my greenfield projects are single page javascript apps, authentication has become slightly more complicated. While you can certainly continue doing traditional authentication with cookies and server-rendered views, my preference is to use a token-based approach. This has a number of benefits:
 
