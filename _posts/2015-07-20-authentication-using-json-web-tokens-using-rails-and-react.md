@@ -4,7 +4,7 @@ tags: coding, reactjs, javascript, ruby, rails, flux
 title: Authentication with JSON Web Tokens using Rails and React / Flux
 ---
 
-In a [previous post]({% post_url 2014-12-04-add-json-web-token-authentication-to-your-angular-rails-app %}), I went over how to add authentication to your Rails + Angular app using JSON Web Token. This time, I'll do the same, but using the [React ecosystem]({%post_url 2015-07-17-how-to-replace-the-angular-stack-with-the-react-ecosystem %}). But even if you're using another front-end framework (Angular, Ember, Backbone), this post will be helpful because it fixes some issues with the previous server-side code that broke due to a change in the [jwt gem](https://github.com/progrium/ruby-jwt).
+In a [previous post]({% post_url 2014-12-04-add-json-web-token-authentication-to-your-angular-rails-app %}), I went over how to add authentication to your Rails + Angular app using JSON Web Tokens (JWT). This time, I'll do the same, but using the [React ecosystem]({%post_url 2015-07-17-how-to-replace-the-angular-stack-with-the-react-ecosystem %}). But even if you're using another front-end framework (Angular, Ember, Backbone), this post will be helpful because it fixes some issues with the previous server-side code that broke due to a change in the [jwt gem](https://github.com/progrium/ruby-jwt).
 
 <!-- more -->
 
