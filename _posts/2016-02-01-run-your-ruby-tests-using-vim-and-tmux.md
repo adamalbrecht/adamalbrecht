@@ -31,7 +31,7 @@ map <leader>t <Plug>SendTestToTmux
 map <leader>s <Plug>SendFocusedTestToTmux
 {% endhighlight %}
 
-By combining these handy shortcuts with [Spring](http://guides.rubyonrails.org/4_1_release_notes.html#spring-application-preloader), the application preloader added in Rails 4.1, you'll have no excuse not to be running your tests quickly and frequently.
+By combining these handy shortcuts with the speed increase provided by [Spring](http://guides.rubyonrails.org/4_1_release_notes.html#spring-application-preloader), the application preloader added in Rails 4.1, you'll have no excuse not to be running your tests quickly and frequently.
 
 Here's a quick gif of how the whole process looks:
 
