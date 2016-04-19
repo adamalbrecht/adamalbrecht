@@ -77,6 +77,17 @@
         color: #f3f3f3;
         line-height: 0.8em;
       }
+      .large-url {
+        font-family: 'Yanone Kaffeesatz';
+        font-size: 2.5em;
+        padding: 0 0 0.2em 0;
+        display: inline-block;
+        letter-spacing: 0.15em;
+      }
+      .inverse .large-url {
+        color: #f3f3f3;
+        border-bottom-color: #f3f3f3;
+      }
 
       /* Slide-specific styling */
       #slide-inverse .footnote {
@@ -159,7 +170,19 @@ I've been doing primarily Ruby and Javascript for the past 5 years or so and I'v
 
 ---
 
-# what is Ecto and why do I care?
+template: inverse
+
+.large-url[
+adamalbrecht.com/ecto.html
+]
+
+???
+
+By the way, feel free to interrupt and ask questions at any time.
+
+---
+
+# What is Ecto and Why do I care?
 
 ---
 layout: false
@@ -183,14 +206,13 @@ layout: false
 layout: false
 # Why do I care?
 
-* Interacting with a database is crucial to almost every application
-* Very different from "ORM's" in object oriented languages
+* Interacting with a database is one of the building blocks of most applications
 * Interesting functional take on querying and updating the database.
 
 
 ???
 
-Just out of curiosity, how many of you have a ruby background?
+Just out of curiosity, how many of you have a ruby background? I'm curious how many Active Record comparisons I'm allowed to make without people getting annoyed.
 
 And even if you have no plan on using Ecto (Maybe your app doesn't persist data or you're using some other data store) it's still a very interesting solution to the problem that I think is worth studying.
 
@@ -223,7 +245,9 @@ Just FYI, I'll be referring to Ecto 2.0, which is currently in release candidate
 
 ???
 
-We'll cover them one-at-a-time using, for the most part, a basic blog application as an example.
+These are the basic building blocks of Ecto and what we'll do is cover them one-at-a-time using a basic blog application for the examples.
+
+We'll try to breeze through the first 3 and then the last 2 are really the most interesting pieces of ecto.
 
 ---
 
@@ -235,9 +259,9 @@ template: inverse
 
 # Ecto.Repo
 
-* Wraps a database
+* Wraps a single database
 * All actions (insert, select, update, etc) go through the Repo
-* Decoupled from schemas and queries
+* Decoupled from schemas, queries, and changesets.
 * Sends actions to database via adapters
     * Official: PostgreSQL, MySQL
     * 3rd Party: SQLite, SQL Server, MongoDB
@@ -268,7 +292,10 @@ config :my_app, Repo,
 # ...
 
 MyBlog.Repo.all(query)
+MyBlog.Repo.get(5)
 MyBlog.Repo.insert(changeset)
+MyBlog.Repo.update(changeset)
+MyBlog.Repo.delete_all
 ```
 ]
 
@@ -278,7 +305,7 @@ So you configure your repo. I actually like to call this "DB" sometimes because 
 
 And as you can see, we're setting it up with Postgres
 
-And then at the bottom, you can see how we'll be using the Repo later.
+And then at the bottom, you can see how we'll be using the Repo. We'll get more into that in a few minutes.
 
 ---
 
@@ -296,7 +323,11 @@ template: inverse
 
 ???
 
-Again, for those of you coming from a Rails background, this is very different than the Rails world. Now this is changing a bit, but Rails seemed to have the attitude of treating your database as a dumb data store.
+very different than the Rails world.
+
+This has changed a bit lately, but Rails seemed to have the attitude of treating your database as a dumb data store.
+
+Ecto definitely goes in the other direction on this.
 
 
 ---
@@ -312,7 +343,6 @@ defmodule MyBlog.Repo.Migrations.CreatePost do
       add :title, :string, size: 100, null: false
       add :slug, :string, size: 100, null: false
       add :content, :text, null: false
-      add :active, :boolean, null: false, default: false
       timestamps
     end
     create unique_index(:posts, [:slug])
@@ -325,6 +355,7 @@ defmodule MyBlog.Repo.Migrations.CreateComment do
   def change do
     create table(:comments) do
       add :post_id, references(:posts, on_delete: :delete_all), null: false
+      # ...
       add :content, :text, null: false
       add :votes, :integer, null: false, default: 0
       timestamps
@@ -333,6 +364,19 @@ defmodule MyBlog.Repo.Migrations.CreateComment do
   end
 end
 ```
+
+???
+
+Here are a couple example migrations.
+
+It's fairly straight forward but just a few things to note:
+
+* It adds primary key fields by default
+
+* And it's easy to add created_at and updated_at timestamps.
+
+* That references function creates foreign keys for you.
+
 
 ---
 
@@ -344,8 +388,9 @@ template: inverse
 
 # Ecto.Schema .red[*]
 
-- Tell Ecto about the structure of your DB
-    - Map it to Elixir structs
+### Tell Ecto about the structure of your DB and how it maps to Elixir structs
+
+- Define fields
 - Define associations
     - belongs_to
     - has_many
@@ -393,6 +438,14 @@ end
 ```
 ]
 
+???
+
+Here are a couple example schemas for the two tables we created in the migrations.
+
+Look very similar to the migrations.
+
+Note that we define which other schema our associations map to.
+
 ---
 
 template: inverse
@@ -401,7 +454,7 @@ template: inverse
 
 ???
 
-Ok, this is where I think things start getting interesting and you start seeing some major differences from other libraries.
+Ok, now that we've defined our Repo, created our tables, and setup our schemas, we're read to insert data into the database.
 
 ---
 
@@ -410,7 +463,9 @@ Ok, this is where I think things start getting interesting and you start seeing 
 - Cast and filter external parameters
 - Perform validations
 - Track changes
+- All done by transforming a Changeset struct, then passing it to the Repo
 
+???
 
 ---
 
@@ -431,8 +486,14 @@ defmodule MyBlog.Post do
 end
 ```
 
+
 ```elixir
 post_changeset = Post.changeset(%Post{}, %{title: "Hello World", ...})
+
+# Returns something like:
+# #Ecto.Changeset<action: nil, changes: %{title: "My New Title", content: "..."},
+#  errors: [], data: #MyBlog.Post<>, valid?: true>
+
 Repo.insert(post_changeset)
 ```
 
@@ -445,6 +506,12 @@ If we were doing an update instead of an insert, that struct would something we 
 cast: whitelist a set of parameters that we're going to accept
 
 Notice the unique_constraint function. Ecto validations are integrated with database constraints so that when we do have an issue, we can present the user with a nice validation error.
+
+And what we return is a Changeset struct that has all of the information we need.
+  * The changes made
+  * The validation results
+  * The original data
+  * etc
 
 ---
 
@@ -476,7 +543,15 @@ end
 
 ???
 
-Now say we have a users table and we have 2 validation scenarios: A basic one and a registration one where we need to validate and encrypt their password.
+Now let's look at a more complex scenario.
+
+Say we have two different pages that update users:
+  * A registration page
+  * An admin page to update existing useres
+
+In one scenario, we want to validate the password and encrypt it. And in the other maybe we don't care.
+
+So we just create two changesets, and the registration one just calls the basic one.
 
 ---
 
@@ -504,10 +579,13 @@ template: inverse
 
 - Added to Elixir via Macros
 - Queries are passed to the Repo for execution
+- The Repo returns structs shaped like the schema you defined
 
 ]
 
 ???
+
+During the dark times when I was a .Net developer, I remember when LINQ came out and thinking it was pretty cool.
 
 Now let's look at some ecto query examples
 
