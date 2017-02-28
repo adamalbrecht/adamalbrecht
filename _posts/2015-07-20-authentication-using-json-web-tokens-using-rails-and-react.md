@@ -268,7 +268,7 @@ let SessionStore = Reflux.createStore({
   getUsername() { return _sessionState.username; }
   getUserId() { return _sessionState.userId; }
   isLoggedIn() { return (_sessionState.authToken !== null); },
-  getAuthErrors() { return (_sessionState.authErrors !== null); },
+  getAuthErrors() { return (_sessionState.authErrors); },
   isAuthRequestInProgress() { return (_sessionState.authRequestInProgress === true); }
 });
 
