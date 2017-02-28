@@ -154,6 +154,8 @@ Also, note that I'm using ES6 (or ES2015, as some like to call it) in all of my 
 
 For my react apps, I use the [axios](https://github.com/mzabriskie/axios) http library. But you can use any library you'd like. This is just a simple method that makes an HTTP Post request to the server-side endpoint we just created.
 
+**auth_api.js:**
+
 {% highlight js %}
 import axios from 'axios';
 
@@ -197,6 +199,7 @@ export default AuthActions;
 {% highlight js %}
 import Reflux from 'reflux';
 import AuthActions from './auth_actions';
+import AuthAPI from './auth_api';
 
 // This object is where we'll store all the session state.
 // It will be a private variable and if any outside code
@@ -291,20 +294,20 @@ let LoginForm = React.createClass({
     AuthActions.login(username, password);
   },
   renderAuthErrors() {
-    let errors = SessionState.getAuthErrors();
+    let errors = SessionStore.getAuthErrors();
     if (errors.length === 0) { return null; }
     return (
       <ul className='AuthErrors'>{ errors.map((err) => ( <li>{err}</li> )) }</ul>
     );
   },
   render() {
-    let buttonText = SessionState.isAuthRequestInProgress() ? 'Submitting...' : 'Login';
+    let buttonText = SessionStore.isAuthRequestInProgress() ? 'Submitting...' : 'Login';
     return (
       <form onSubmit={this.handleLogin}>
         { this.renderAuthErrors() }
         <input type='text' name='username' ref='username' />
         <input type='password' name='password' ref='password' />
-        <button disabled={SessionState.isAuthRequestInProgress()}>{buttonText}</button>
+        <button disabled={SessionStore.isAuthRequestInProgress()}>{buttonText}</button>
       </form>
     );
   }
