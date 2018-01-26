@@ -108,7 +108,7 @@ abbr {
 
 code, pre {
   padding: 0 3px 2px;
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: "San Francisco Mono", Menlo, Monaco, "Courier New", monospace;
   font-size: 14px;
   border-radius: 3px;
 }
