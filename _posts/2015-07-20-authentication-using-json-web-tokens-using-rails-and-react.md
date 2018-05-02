@@ -4,7 +4,7 @@ tags: coding, reactjs, javascript, ruby, rails, flux
 title: Authentication with JSON Web Tokens using Rails and React / Flux
 ---
 
-In a [previous post]({% post_url 2014-12-04-add-json-web-token-authentication-to-your-angular-rails-app %}), I went over how to add authentication to your Rails + Angular app using JSON Web Token. This time, I'll do the same, but using the [React ecosystem]({%post_url 2015-07-17-how-to-replace-the-angular-stack-with-the-react-ecosystem %}). But even if you're using another front-end framework (Angular, Ember, Backbone), this post will be helpful because it fixes some issues with the previous server-side code that broke due to a change in the [jwt gem](https://github.com/progrium/ruby-jwt).
+In a [previous post]({% post_url 2014-12-04-add-json-web-token-authentication-to-your-angular-rails-app %}), I went over how to add authentication to your Rails + Angular app using JSON Web Tokens (JWT). This time, I'll do the same, but using the [React ecosystem]({%post_url 2015-07-17-how-to-replace-the-angular-stack-with-the-react-ecosystem %}). But even if you're using another front-end framework (Angular, Ember, Backbone), this post will be helpful because it fixes some issues with the previous server-side code that broke due to a change in the [jwt gem](https://github.com/progrium/ruby-jwt).
 
 <!-- more -->
 
@@ -154,6 +154,8 @@ Also, note that I'm using ES6 (or ES2015, as some like to call it) in all of my 
 
 For my react apps, I use the [axios](https://github.com/mzabriskie/axios) http library. But you can use any library you'd like. This is just a simple method that makes an HTTP Post request to the server-side endpoint we just created.
 
+**auth_api.js:**
+
 {% highlight js %}
 import axios from 'axios';
 
@@ -197,6 +199,7 @@ export default AuthActions;
 {% highlight js %}
 import Reflux from 'reflux';
 import AuthActions from './auth_actions';
+import AuthAPI from './auth_api';
 
 // This object is where we'll store all the session state.
 // It will be a private variable and if any outside code
@@ -265,7 +268,7 @@ let SessionStore = Reflux.createStore({
   getUsername() { return _sessionState.username; }
   getUserId() { return _sessionState.userId; }
   isLoggedIn() { return (_sessionState.authToken !== null); },
-  getAuthErrors() { return (_sessionState.authErrors !== null); },
+  getAuthErrors() { return (_sessionState.authErrors); },
   isAuthRequestInProgress() { return (_sessionState.authRequestInProgress === true); }
 });
 
@@ -291,20 +294,20 @@ let LoginForm = React.createClass({
     AuthActions.login(username, password);
   },
   renderAuthErrors() {
-    let errors = SessionState.getAuthErrors();
+    let errors = SessionStore.getAuthErrors();
     if (errors.length === 0) { return null; }
     return (
       <ul className='AuthErrors'>{ errors.map((err) => ( <li>{err}</li> )) }</ul>
     );
   },
   render() {
-    let buttonText = SessionState.isAuthRequestInProgress() ? 'Submitting...' : 'Login';
+    let buttonText = SessionStore.isAuthRequestInProgress() ? 'Submitting...' : 'Login';
     return (
       <form onSubmit={this.handleLogin}>
         { this.renderAuthErrors() }
         <input type='text' name='username' ref='username' />
         <input type='password' name='password' ref='password' />
-        <button disabled={SessionState.isAuthRequestInProgress()}>{buttonText}</button>
+        <button disabled={SessionStore.isAuthRequestInProgress()}>{buttonText}</button>
       </form>
     );
   }

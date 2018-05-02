@@ -1,0 +1,768 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      ul li {
+        line-height: 1.8em;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+        font-style: italic;
+        color: #777;
+        font-size: 0.9em;
+      }
+      .centerbottom {
+        position: absolute;
+        bottom: 10%;
+        width: 30%;
+        left: 35%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      .large-url {
+        font-family: 'Yanone Kaffeesatz';
+        font-size: 2.5em;
+        padding: 0 0 0.2em 0;
+        display: inline-block;
+        letter-spacing: 0.15em;
+      }
+      .inverse .large-url {
+        color: #f3f3f3;
+        border-bottom-color: #f3f3f3;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        width: 25%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 70%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+
+---
+template: inverse
+
+# Ecto
+## A Brief Introduction
+
+---
+
+template: inverse
+
+# Adam Albrecht
+
+@adam_albrecht
+
+github.com/adamalbrecht
+
+adamalbrecht.com
+
+???
+
+I've been doing primarily Ruby and Javascript for the past 5 years or so and I've been just recently bitten by Elixir and the whole functional paradigm.
+
+---
+
+template: inverse
+
+.large-url[
+adamalbrecht.com/ecto.html
+]
+
+???
+
+By the way, feel free to interrupt and ask questions at any time.
+
+---
+
+# What is Ecto and Why do I care?
+
+---
+layout: false
+
+# What is it?
+
+- Elixir libary for interacting with relational.red[*] databases
+
+- Written by Elixir core members, including José Valim
+
+- Default persistence library in Phoenix.red[**]
+
+.footnote[
+  .red[*] a mongo adapter does exist
+
+  .red[**] not a hard dependency
+]
+
+---
+
+layout: false
+# Why do I care?
+
+* Interacting with a database is one of the building blocks of most applications
+* Interesting functional take on querying and updating the database.
+
+
+???
+
+Just out of curiosity, how many of you have a ruby background? I'm curious how many Active Record comparisons I'm allowed to make without people getting annoyed.
+
+And even if you have no plan on using Ecto (Maybe your app doesn't persist data or you're using some other data store) it's still a very interesting solution to the problem that I think is worth studying.
+
+---
+template: inverse
+
+# 2.0
+
+???
+
+Just FYI, I'll be referring to Ecto 2.0, which is currently in release candidate. There are some API changes and new feature in 2.0.
+
+---
+
+.left-column[
+# Agenda
+]
+
+.right-column[
+1. Ecto.Repo
+
+2. Ecto.Migration
+
+3. Ecto.Schema
+
+4. Ecto.Changeset
+
+5. Ecto.Query
+]
+
+???
+
+These are the basic building blocks of Ecto and what we'll do is cover them one-at-a-time using a basic blog application for the examples.
+
+We'll try to breeze through the first 3 and then the last 2 are really the most interesting pieces of ecto.
+
+---
+
+template: inverse
+
+# Ecto.Repo
+
+---
+
+# Ecto.Repo
+
+* Wraps a single database
+* All actions (insert, select, update, etc) go through the Repo
+* Decoupled from schemas, queries, and changesets.
+* Sends actions to database via adapters
+    * Official: PostgreSQL, MySQL
+    * 3rd Party: SQLite, SQL Server, MongoDB
+* Not actually Repository Pattern
+
+---
+
+.left-column[
+## Setup the Repo
+]
+
+.right-column[
+
+```elixir
+defmodule MyBlog.Repo do
+  use Ecto.Repo, otp_app: :blog_app
+end
+
+# ...
+
+config :my_app, Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "my_blog_db",
+  username: "...",
+  password: "...",
+  hostname: "localhost",
+
+# ...
+
+MyBlog.Repo.all(query)
+MyBlog.Repo.get(5)
+MyBlog.Repo.insert(changeset)
+MyBlog.Repo.update(changeset)
+MyBlog.Repo.delete_all
+```
+]
+
+???
+
+So you configure your repo. I actually like to call this "DB" sometimes because it seems clearer to me, but we'll keep it as Repo since that's the convention.
+
+And as you can see, we're setting it up with Postgres
+
+And then at the bottom, you can see how we'll be using the Repo. We'll get more into that in a few minutes.
+
+---
+
+template: inverse
+
+# Ecto.Migration
+
+---
+
+# Ecto.Migration
+
+- Highly inspired by Rails migrations
+- Strongly encourages database integrity
+    - Foreign keys, indexes, etc
+
+???
+
+very different than the Rails world.
+
+This has changed a bit lately, but Rails seemed to have the attitude of treating your database as a dumb data store.
+
+Ecto definitely goes in the other direction on this.
+
+
+---
+
+## Example Migration
+
+```elixir
+defmodule MyBlog.Repo.Migrations.CreatePost do
+  use Ecto.Migration
+
+  def change do
+    create table(:posts) do
+      add :title, :string, size: 100, null: false
+      add :slug, :string, size: 100, null: false
+      add :content, :text, null: false
+      timestamps
+    end
+    create unique_index(:posts, [:slug])
+  end
+end
+
+defmodule MyBlog.Repo.Migrations.CreateComment do
+  use Ecto.Migration
+
+  def change do
+    create table(:comments) do
+      add :post_id, references(:posts, on_delete: :delete_all), null: false
+      # ...
+      add :content, :text, null: false
+      add :votes, :integer, null: false, default: 0
+      timestamps
+    end
+    create index(:comments, [:post_id])
+  end
+end
+```
+
+???
+
+Here are a couple example migrations.
+
+It's fairly straight forward but just a few things to note:
+
+* It adds primary key fields by default
+
+* And it's easy to add created_at and updated_at timestamps.
+
+* That references function creates foreign keys for you.
+
+
+---
+
+template: inverse
+
+# Ecto.Schema
+
+---
+
+# Ecto.Schema .red[*]
+
+### Tell Ecto about the structure of your DB and how it maps to Elixir structs
+
+- Define fields
+- Define associations
+    - belongs_to
+    - has_many
+    - has_one
+    - many_to_many
+
+
+.footnote[
+.red[*] called Ecto.Model in 1.0
+]
+
+---
+
+.left-column[
+## Example Schemas
+]
+
+.right-column[
+```elixir
+defmodule MyBlog.Post do
+  use Ecto.Schema
+
+  schema "posts" do
+    field :title, :string
+    field :slug, :string
+    field :content, :string
+    field :active, :boolean
+    has_many :comments, MyBlog.Comment
+
+    timestamps
+  end
+end
+
+defmodule MyBlog.Comment do
+  use Ecto.Schema
+
+  schema "comments" do
+    belongs_to :post, MyBlog.Post
+    field :content, :string
+    field :votes, :integer 
+
+    timestamps
+  end
+end
+```
+]
+
+???
+
+Here are a couple example schemas for the two tables we created in the migrations.
+
+Look very similar to the migrations.
+
+Note that we define which other schema our associations map to.
+
+---
+
+template: inverse
+
+# Ecto.Changeset
+
+???
+
+Ok, now that we've defined our Repo, created our tables, and setup our schemas, we're read to insert data into the database.
+
+---
+
+# Ecto.Changeset
+
+- Cast and filter external parameters
+- Perform validations
+- Track changes
+- All done by transforming a Changeset struct, then passing it to the Repo
+
+???
+
+---
+
+# Simple Changeset Example
+
+```elixir
+defmodule MyBlog.Post do
+  # ...
+
+  def changeset(post, params) do
+    post
+    |> cast(params, [:title, :content, :active])
+    |> validate_required([:title, :content, :slug])
+    |> validate_format(:slug, ~r/^[a-z0-9-]+$/)
+    |> validate_length(:title, max: 100)
+    |> unique_constraint(:slug)
+  end
+end
+```
+
+
+```elixir
+post_changeset = Post.changeset(%Post{}, %{title: "Hello World", ...})
+
+# Returns something like:
+# #Ecto.Changeset<action: nil, changes: %{title: "My New Title", content: "..."},
+#  errors: [], data: #MyBlog.Post<>, valid?: true>
+
+Repo.insert(post_changeset)
+```
+
+???
+
+So here we have a very basic example of a changeset. It accepts a post struct and a hash of parameters.
+
+If we were doing an update instead of an insert, that struct would something we retreived from the database and would be populated with data.
+
+cast: whitelist a set of parameters that we're going to accept
+
+Notice the unique_constraint function. Ecto validations are integrated with database constraints so that when we do have an issue, we can present the user with a nice validation error.
+
+And what we return is a Changeset struct that has all of the information we need.
+  * The changes made
+  * The validation results
+  * The original data
+  * etc
+
+---
+
+# Composable Changesets
+
+```elixir
+defmodule MyBlog.User do
+  # ...
+
+  def changeset(user, params) do
+    user
+    |> cast(params, [:username])
+    |> validate_required([:username])
+  end
+
+  def registration_changeset(user, params) do
+    user
+    |> changeset(params)
+    |> cast(params, [:password, :password_confirmation])
+    |> validate_confirmation(:password)
+    |> generate_password_hash()
+  end
+
+  defp generate_password_hash(cs)
+    put_change(cs, :password_hash, SomeLibrary.encrypt(cs.changes.password))
+  end
+end
+```
+
+???
+
+Now let's look at a more complex scenario.
+
+Say we have two different pages that update users:
+  * A registration page
+  * An admin page to update existing useres
+
+In one scenario, we want to validate the password and encrypt it. And in the other maybe we don't care.
+
+So we just create two changesets, and the registration one just calls the basic one.
+
+---
+
+template: inverse
+
+# Ecto.Query
+
+---
+
+.left-column[
+# Ecto.Query
+]
+
+.right-column[
+- Syntax inspired by LINQ
+    - Language INtegrated Query
+    - Introduced into .NET in 2007
+    - Required syntax additions to C#, F#, and VB.net
+
+```elixir
+  from p in Post,
+    where: p.active == true,
+    select: p
+```
+
+- Added to Elixir via Macros
+- Queries are passed to the Repo for execution
+- The Repo returns structs shaped like the schema you defined
+
+]
+
+???
+
+During the dark times when I was a .Net developer, I remember when LINQ came out and thinking it was pretty cool.
+
+Now let's look at some ecto query examples
+
+---
+
+## Example 1: Select All Posts
+
+```elixir
+alias MyBlog.{Repo,Post,Comment}
+
+Repo.all(
+  from p in Post,
+    select: p
+)
+```
+
+---
+
+## Example 2: Select All **Active** Posts
+
+```elixir
+Repo.all(
+  from p in Post,
+  where: p.active == true,
+  select: p
+)
+```
+
+---
+
+## Example 3: Preload an association
+
+```elixir
+Repo.all(
+  from p in Post,
+  preload: [:comments]
+  where: p.active == true,
+  select: p
+)
+```
+
+---
+
+## A Note on Preloading
+
+You have to **explicitly** load associations.
+
+
+```elixir
+# Without Preloading:
+
+%MyBlog.Post{__meta__: #Ecto.Schema.Metadata<:loaded>,
+  comments: #Ecto.Association.NotLoaded<association :comments is not loaded>,
+  content: "hello world", id: 1,
+  inserted_at: #Ecto.DateTime<2016-04-19 16:49:24>,
+  title: "My First Post",
+  updated_at: #Ecto.DateTime<2016-05-19 16:49:24>}}
+```
+
+???
+
+So if you don't preload association, then you try to iterate over it, it's not going to magically pull it down for you and you're going to run into an error. Which is a good thing because you're much less likely to run into n+1 issues.
+
+---
+
+## Example 4: Preload association using a Subquery
+
+```elixir
+comments_query = from c in Comment,
+                   order_by: c.votes,
+                   limit: 3
+
+Repo.all(
+  from p in Post,
+  preload: [comments: ^comments_query]
+  where: p.active == true,
+  select: p
+)
+```
+
+---
+
+## Example 5: Pagination
+
+```elixir
+comments_query = from c in Comment,
+                   order_by: c.votes,
+                   limit: 3
+offset = 50
+per_page = 25
+
+Repo.all(
+  from p in Post,
+  preload: [comments: ^comments_query]
+  where: p.active == true,
+  offset: ^offset,
+  limit: ^per_page
+  select: p
+)
+```
+
+???
+
+Ok, this is starting to get complicated. How can we break this up and make it more reusable. Like anything elixir, you can just break into a series of functions.
+
+---
+
+## Example 6: Composing Queries
+
+
+```elixir
+def is_active(query) do
+  from q in query,
+    where q.active == true
+end
+
+def preload_popular_comments(query) do
+  comments_query = from c in Comment, order_by: c.votes, limit: 3
+
+  from q in query,
+    preload: [comments: ^comments_query]
+end
+
+def paginate(query, page, per_page) do
+  offset = (page - 1) * per_page
+
+  from q in query,
+    offset: ^offset,
+    limit: ^per_page
+end
+
+```
+
+```elixir
+Repo.all(Post)
+  |> is_active
+  |> preload_popular_comments
+  |> paginate(3, 25)
+```
+
+---
+
+# Alternate, Pipe Based Querying Syntax
+
+```elixir
+Post
+|> preload([:comments])
+|> where([p], p.active == true)
+|> select([p], p)
+|> Repo.first
+
+Post
+|> join(:inner, [p], c in assoc(p, :comments))
+|> where([p, _], p.active == true)
+|> select([p, _], p)
+|> Repo.all
+
+```
+
+---
+template: inverse
+
+# Questions?
+
+.centerbottom[
+@adam_albrecht
+]
+
+
+
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
